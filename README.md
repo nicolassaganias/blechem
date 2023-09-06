@@ -18,4 +18,4 @@ When the app is opened you see an empty screen where you can search new device b
 
 When you click the magnifying glass all the BLE available devices are shown. In this example we click on "PH" to conect to pH Sensor.
 
-![pH Sensor Connect](images/screen-0-small.png) ![pH Sensor Connected](images/screen-0-small.png)
+![pH Sensor Connect](images/screen-search-device-small.png) --> ![pH Sensor Connected](images/screen-device-conected-small.png)
