@@ -38,3 +38,4 @@ If Share is selected the app will bring up the default mail app and will compres
 
 Once data is shared user will be able to see a table-formated .csv file:
 
+![csv table](images/csv-table.png)
