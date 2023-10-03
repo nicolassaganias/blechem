@@ -20,6 +20,8 @@ When you click the magnifying glass all the BLE available devices are shown. In 
 
 ![pH Sensor Connect](images/screen-search-device-small.png)   -->   ![pH Sensor Connected](images/screen-device-conected-small.png)
 
+#maybe device will ask a pin number if it's first time being paired. try 000000 (six times zero) or in case of weight try 1234.#
+
 Once device is connected, see the data being received in Data Display:
 
 ![Data Display](images/screen-data-display-small.png)
