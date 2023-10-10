@@ -1,0 +1,37 @@
+name: blechem
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  permission_handler: ^10.2.0
+  csv: ^5.0.2
+  file_saver: ^0.2.8
+  path_provider: ^2.0.15
+  device_info_plus: ^9.0.2
+  flutter_blue_plus: ^1.13.4
+  flutter_email_sender: ^6.0.0
+  app_settings: ^5.0.0
+  location: ^4.4.0
+  get: ^4.6.5
+ 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
