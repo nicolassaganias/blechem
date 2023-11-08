@@ -12,7 +12,7 @@ void setup() {
 
   configBLE();
 
-  OffSet = getOffset();
+  //OffSet = getOffset(); // for manual Calibration
   Serial.print("Stored Offset value: ");
   Serial.println(OffSet);
 

@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>  // Required Library
 
-#define rxPinRS232 9  // Connect the rx pin of RS232 with Bluno Diigtal 9 pin
-#define txPinRS232 10 // Connect the tx pin of RS232 with Bluno Diigtal 10 pin
+#define rxPinRS232 4  // Connect the rx pin of RS232 with Bluno Diigtal 9 pin
+#define txPinRS232 3 // Connect the tx pin of RS232 with Bluno Diigtal 10 pin
 
 SoftwareSerial mySerial(rxPinRS232, txPinRS232); // Create the software serial object
 
@@ -19,5 +19,3 @@ String getWeight() {
   }
   return "";
 }
-
-
