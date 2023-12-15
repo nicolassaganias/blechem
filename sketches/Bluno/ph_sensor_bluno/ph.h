@@ -9,7 +9,7 @@
 #include "DFRobot_PH.h"
 #include <EEPROM.h>
 
-#define PH_PIN A1 // Connect the ph sensor with Bluno A5 Analog pin
+#define PH_PIN A5 // Connect the ph sensor with Bluno A5 Analog pin
 float voltage, phValue, temperature = 25;
 DFRobot_PH ph;
 

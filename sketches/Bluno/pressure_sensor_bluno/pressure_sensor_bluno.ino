@@ -18,17 +18,20 @@ void loop() {
   }
 
   else if(revData.indexOf(ENTERP) >= 0){
-    Serial.println(">>>Enter Pressure Calibration Mode<<<");
-    Serial.println(">>>Please Disconnect the Pressure Sensor from water pipe and Send calp<<<");
+    // Serial.println(">>>Enter Pressure Calibration Mode<<<");
+    // Serial.println(">>>Please Disconnect the Pressure Sensor from water pipe and Send calp<<<");
+    Serial.println("p:1");
   }
 
   else if(revData.indexOf(CALP) >= 0){
     calibrate();
-    Serial.println(">>>Pressure Calibration Successful<<<");
+    // Serial.println(">>>Pressure Calibration Successful<<<");
+    Serial.println("p:2");
   }
 
   else if(revData.indexOf(EXITP) >= 0){
-    Serial.println(">>>Exit Pressure Calibration Mode<<<");
+    // Serial.println(">>>Exit Pressure Calibration Mode<<<");
+    Serial.println("p:3");
   }
 
   // To check the one demand data request or continious data sneding

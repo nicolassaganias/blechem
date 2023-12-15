@@ -1,8 +1,8 @@
 #define PAIR "pair"
 #define OD "od"
-#define ENTERP "enterp"
-#define CALP "calp"
-#define EXITP "exitp"
+#define ENTEREC "enterec"
+#define CALEC "calec"
+#define EXITEC "exitec"
 
 
 // Function for get data from BLE

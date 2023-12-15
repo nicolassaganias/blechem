@@ -156,16 +156,18 @@ void DFRobot_EC::ecCalibration(byte mode)
     switch(mode){
         case 0:
         if(enterCalibrationFlag){
-            Serial.println(F(">>>Command Error<<<"));
+            // Serial.println(F(">>>Command Error<<<"));
+            Serial.println("ec:0");
         }
         break;
         case 1:
         enterCalibrationFlag = 1;
         ecCalibrationFinish  = 0;
-        Serial.println();
-        Serial.println(F(">>>Enter EC Calibration Mode<<<"));
-        Serial.println(F(">>>Please put the probe into the 1413us/cm or 12.88ms/cm buffer solution<<<"));
-        Serial.println();
+        // Serial.println();
+        // Serial.println(F(">>>Enter EC Calibration Mode<<<"));
+        // Serial.println(F(">>>Please put the probe into the 1413us/cm or 12.88ms/cm buffer solution<<<"));
+        // Serial.println();
+        Serial.println("ec:1");
         break;
         case 2:
         if(enterCalibrationFlag){
@@ -174,15 +176,17 @@ void DFRobot_EC::ecCalibration(byte mode)
             }else if((this->_rawEC>9)&&(this->_rawEC<16.8)){                    //recognize 12.88ms/cm buffer solution
                 compECsolution = 12.88*(1.0+0.0185*(this->_temperature-25.0));  //temperature compensation
             }else{
-                Serial.print(F(">>>Buffer Solution Error Try Again<<<   "));
+                // Serial.print(F(">>>Buffer Solution Error Try Again<<<   "));
+                Serial.println("ec:5");
                 ecCalibrationFinish = 0;
             }
             KValueTemp = RES2*ECREF*compECsolution/1000.0/this->_voltage;       //calibrate the k value
             if((KValueTemp>0.5) && (KValueTemp<1.5)){
-                Serial.println();
-                Serial.print(F(">>>Successful,K:"));
-                Serial.print(KValueTemp);
-                Serial.println(F(", Send EXITEC to Save and Exit<<<"));
+                // Serial.println();
+                // Serial.print(F(">>>Successful,K:"));
+                // Serial.print(KValueTemp);
+                // Serial.println(F(", Send EXITEC to Save and Exit<<<"));
+                Serial.println("ec:8");
                 if((this->_rawEC>0.9)&&(this->_rawEC<1.9)){
                     this->_kvalueLow =  KValueTemp;
                 }else if((this->_rawEC>9)&&(this->_rawEC<16.8)){
@@ -191,9 +195,10 @@ void DFRobot_EC::ecCalibration(byte mode)
                 ecCalibrationFinish = 1;
           }
             else{
-                Serial.println();
-                Serial.println(F(">>>Failed,Try Again<<<"));
-                Serial.println();
+                // Serial.println();
+                // Serial.println(F(">>>Failed,Try Again<<<"));
+                // Serial.println();
+                Serial.println("ec:9");
                 ecCalibrationFinish = 0;
             }
         }
@@ -207,13 +212,14 @@ void DFRobot_EC::ecCalibration(byte mode)
                     }else if((this->_rawEC>9)&&(this->_rawEC<16.8)){
                         EEPROM_write(KVALUEADDR+4, this->_kvalueHigh);
                     }
-                    Serial.print(F(">>>Calibration Successful"));
+                    //Serial.print(F(">>>Calibration Successful"));
+                    Serial.println("ec:6");
                 }else{
-                    Serial.print(F(">>>Calibration Failed"));
+                    //Serial.print(F(">>>Calibration Failed"));
+                    Serial.println("ec:7");
                 }
-                Serial.println(F(",Exit EC Calibration Mode<<<"));
-                Serial.println();
-                s = true;
+                // Serial.println(F(",Exit EC Calibration Mode<<<"));
+                // Serial.println();
                 ecCalibrationFinish  = 0;
                 enterCalibrationFlag = 0;
         }

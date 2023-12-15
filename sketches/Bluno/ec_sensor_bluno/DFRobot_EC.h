@@ -29,8 +29,7 @@ public:
     void    calibration(float voltage, float temperature,char* cmd);        //calibration by Serial CMD
     void    calibration(float voltage, float temperature);                  //calibration by Serial CMD
     float   readEC(float voltage, float temperature);                       // voltage to EC value, with temperature compensation
-    void    begin();
-    bool  s = true;                                                        //initialization
+    void    begin();                                                        //initialization
 
 private:
     float  _ecvalue;

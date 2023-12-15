@@ -23,8 +23,8 @@ void calibrate() {
     }
   }
   EEPROM.put(dataAddress, OffSet);
-  Serial.print("Set Offset value: ");
-  Serial.println(OffSet);
+  // Serial.print("Set Offset value: ");
+  // Serial.println(OffSet);
   delay(500);
 }
 

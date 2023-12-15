@@ -86,7 +86,7 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 
 // Function for creating a service and multiple characteristics and configure BLE in esp32
 void configBLE() {
-  BLEDevice::init("ESP-32 BLE");                   // BLE Initialization
+  BLEDevice::init("Pressure FE");                   // BLE Initialization
   pServer = BLEDevice::createServer();             // Create a BLE Server
   pServer->setCallbacks(new MyServerCallbacks());  // Set the callback function for checking the device is connected or not
 

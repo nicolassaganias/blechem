@@ -9,7 +9,7 @@
 #include "DFRobot_EC.h"
 #include <EEPROM.h>
 
-#define EC_PIN A5 // Connect the ec sensor with Bluno A5 pin
+#define EC_PIN A1 // Connect the ec sensor with Bluno A5 pin
 float voltage, ecValue, temperature = 25;
 DFRobot_EC ec;
 
@@ -26,6 +26,6 @@ float getEC() {
     //temperature = readTemperature();          // read your temperature sensor to execute temperature compensation
     ecValue = ec.readEC(voltage, temperature);  // convert voltage to EC with temperature compensation
   }
-  ec.calibration(voltage,temperature);
+  //ec.calibration(voltage,temperature);
   return ecValue;
 }

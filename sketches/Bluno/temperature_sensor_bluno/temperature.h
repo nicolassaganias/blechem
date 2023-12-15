@@ -1,6 +1,6 @@
 #include <OneWire.h>  // Required Library
 
-#define TEMPERATURE_SENSOR_PIN 8 // Connect the temperature sensor with Bluno Digital 8 pin
+#define TEMPERATURE_SENSOR_PIN A1 // Connect the temperature sensor with Bluno Digital 8 pin
 
 //Temperature chip i/o
 OneWire ds(TEMPERATURE_SENSOR_PIN);  // OneWire Object creation
@@ -49,7 +49,7 @@ float readTemperature() {
   float tempRead = ((MSB << 8) | LSB);  //using two's compliment
   float TemperatureSum = tempRead / 16;
 
-  TemperatureSum = (TemperatureSum - 32) * (5.00/9.00);
+  //TemperatureSum = (TemperatureSum - 32) * (5.00/9.00);
 
   return TemperatureSum;
 }
