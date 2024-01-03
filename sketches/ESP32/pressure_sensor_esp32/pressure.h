@@ -7,7 +7,7 @@
   After the calibration the sensor is ready for measuring!
 **************************************************************/
 
-float OffSet = 0.412;  // Offset voltage for fermentador //412:12bar 391:30psi
+float OffSet = 0.472;  // Offset voltage for fermentador //412:12bar 391:30psi
 
 float V, P;
 
@@ -18,8 +18,8 @@ float getPressure() {
   //V = analogRead(PRESSURE_SENSOR_PIN) * (5 / 4095.0);
   //V = analogRead(PRESSURE_SENSOR_PIN);// * 5.00 / 1024;
 
-  P = ((V - OffSet) * 250) / 100;  // /100 for milibar                            //Calculate water pressure (original code)
-  //P = (((V - OffSet) * 400) / 100);  // /100 to convert kPa to bar // *2.6 for correction
+  //P = ((V - OffSet) * 250) / 100;  //Calculate water pressure (original code)
+  P = ((V - OffSet) * 60) / 100;  // *55 para 30psi en Fe
 
   Serial.print("Voltage:");
   Serial.print(V, 3);
